@@ -1,0 +1,184 @@
+:root {
+    --primary: hsl(186, 89%, 35%);
+    --primary-lighter: hsl(186, 89%, 45%);
+    --secondary: #B0413E;
+    --bg-light: #FFF1D0;
+    --bs-link-color-rgb:10,153,169;
+    --bs-link-hover-color-rgb: 13,196,217;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+}
+footer {
+    padding: 1rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', 'Sans Serif';
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border: none;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: var(--primary-lighter);
+}
+
+input[type='checkbox'] {
+    accent-color: var(--primary);
+}
+
+.sidenote {
+    font-size: smaller;
+}
+
+.banner-bg-light {
+    background-color: var(--bg-light);
+}
+
+.banner-bg-dark {
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+.banner-bg-dark figcaption {
+    color: #eee;
+}
+
+.icon-big {
+    font-size: 64px;
+}
+
+.icon-medium {
+    font-size: 48px;
+}
+
+.hero-image {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("/assets/img/unsplash-clothing-hero.jpg");
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    
+    text-shadow: 20px 6px 20px black;
+}
+
+.hero-text p {
+    font-weight: 600;
+    font-size: large;
+}
+
+.ablaufSpende .rounded-circle {
+    width: 140px;
+    height: 140px;
+    background-color: var(--secondary);
+}
+
+.ablaufSpende i {
+    color: rgb(255, 255, 255);
+}
+
+/*Form*/
+
+.form-hint {
+    font-size: smaller;
+    color: #999;
+}
+
+legend {
+    margin-top: 20px;
+}
+
+#eingabeAdresse,
+#auswahlKleidungKrisengebiet {
+    display: none;
+}
+
+.radio-card input[type="radio"] {
+    display: none;
+}
+
+.custom-label {
+    cursor: pointer;
+    min-height: 130px
+}
+
+.custom-label-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.custom-label:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.radio-card input[type='radio']:checked+.custom-label {
+    border: 2px solid var(--primary) !important;
+    cursor: initial;
+    box-shadow: none;
+}
+
+/*Validierung*/
+
+.invalid {
+    background-color: var(--bs-danger-bg-subtle);
+    border-color: var(--bs-form-invalid-border-color);
+}
+
+input:focus:invalid {
+    outline: none;
+}
+
+.error {
+    display: block;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: var(--bs-danger);
+}
+
+.team-image {
+    background-image: url("/assets/img/unsplash-team.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 400px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+/*Media Queries*/
+
+@media only screen and (max-width: 768px) {
+    .hero-image {
+        height: 50vh;
+    }
+
+    .hero-text {
+        width: 90vw;
+    }
+}
