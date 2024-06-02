@@ -104,11 +104,6 @@ input[type='checkbox'] {
 
 /*Form*/
 
-.form-hint {
-    font-size: smaller;
-    color: #999;
-}
-
 legend {
     margin-top: 20px;
 }

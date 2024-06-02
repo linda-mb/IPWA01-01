@@ -12,6 +12,7 @@ const strasseUndNummer = document.getElementById("strasseUndNummer");
 const plz = document.getElementById("plz");
 const stadt = document.getElementById("stadt");
 const artKleidung = document.getElementById("artKleidung");
+const artKleidungOptionen = document.getElementById("artKleidungOptionen");
 const spendenziel = document.getElementById("spendenziel");
 
 // Definition für gültige Postleitzahlen
@@ -44,7 +45,7 @@ function zeigeFormular() {
     }
     kleiderUndSpendenzielAuswahl.style.display = "block";
 
-    validiereEingabeBeiAenderung(artKleidung, istArtKleidungGueltig, kleidungFehler);
+    validiereEingabeBeiAenderung(artKleidungOptionen, istArtKleidungGueltig, kleidungFehler);
     validiereEingabeBeiAenderung(spendenziel, istSpendenzielGueltig, spendenzielFehler);
 }
 
@@ -63,13 +64,13 @@ function validiereFormularBeimAbsenden() {
             validiereAdresse();
         }
 
-        validiereEingabe(artKleidung, istArtKleidungGueltig, kleidungFehler);
+        validiereEingabe(artKleidungOptionen, istArtKleidungGueltig, kleidungFehler);
         validiereEingabe(spendenziel, istSpendenzielGueltig, spendenzielFehler);
 
         if (istFormularGueltig) {
             speichereFormularDaten();
             formularKleiderspende.reset();
-            window.location.href = "/abschluss.html";
+            window.location.href = "abschluss.html";
         }
     });
 }
@@ -91,19 +92,19 @@ function validiereEingabe(eingabeId, validierungsArgument, fehlermeldung) {
 }
 
 function validiereAdresse() {
-    validiereEingabe(vorname, istVornameGueltig, pflichtfeldFehler);
-    validiereEingabe(nachname, istNachnameGueltig, pflichtfeldFehler);
-    validiereEingabe(strasseUndNummer, istStrasseUndNummerGueltig, pflichtfeldFehler);
+    validiereEingabe(vorname, istVornameGueltig, vornameFehler);
+    validiereEingabe(nachname, istNachnameGueltig, nachnameFehler);
+    validiereEingabe(strasseUndNummer, istStrasseUndNummerGueltig, strasseUndNummerFehler);
     validiereEingabe(plz, istPlzGueltig, plzFehler);
-    validiereEingabe(stadt, istStadtGueltig, pflichtfeldFehler);
+    validiereEingabe(stadt, istStadtGueltig, stadtFehler);
 }
 
 function validiereAdresseBeiAenderung() {
-    validiereEingabeBeiAenderung(vorname, istVornameGueltig, pflichtfeldFehler);
-    validiereEingabeBeiAenderung(nachname, istNachnameGueltig, pflichtfeldFehler);
-    validiereEingabeBeiAenderung(strasseUndNummer, istStrasseUndNummerGueltig, pflichtfeldFehler);
+    validiereEingabeBeiAenderung(vorname, istVornameGueltig, vornameFehler);
+    validiereEingabeBeiAenderung(nachname, istNachnameGueltig, nachnameFehler);
+    validiereEingabeBeiAenderung(strasseUndNummer, istStrasseUndNummerGueltig, strasseUndNummerFehler);
     validiereEingabeBeiAenderung(plz, istPlzGueltig, plzFehler);
-    validiereEingabeBeiAenderung(stadt, istStadtGueltig, pflichtfeldFehler);
+    validiereEingabeBeiAenderung(stadt, istStadtGueltig, stadtFehler);
 }
 
 // Vorgaben für gültige Eingaben
@@ -116,8 +117,11 @@ const istArtKleidungGueltig = () => document.querySelectorAll('#auswahlKleidungK
 const istSpendenzielGueltig = () => spendenziel.value !== '';
 
 // Fehlermeldungen
-const pflichtfeldFehler = "Das ist ein Pflichtfeld.";
+const vornameFehler = "Bitte geben Sie einen Namen ein.";
+const nachnameFehler = "Bitte geben Sie einen Nachnamen ein."
+const strasseUndNummerFehler ="Bitte geben Sie Ihre Straße und Ihre Hausnummer ein."
 const plzFehler = "Bitte geben Sie eine gültige Postleitzahl im Bereich 50xxx ein.";
+const stadtFehler ="Bitte geben Sie Ihren Wohnort ein."
 const kleidungFehler = "Bitte wählen Sie mindestens eine Kleidungsart aus.";
 const spendenzielFehler = "Bitte wählen Sie einen Ort aus.";
 

@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ausgabeElement.innerHTML = `
             <p><strong>Abgabe:</strong> ${abgabeKleider}</p>
             <p><strong>Adresse:</strong></p>
-            <p>${adressDaten[0]} ${adressDaten[1]}</p>
-            <p>${adressDaten[2]}</p>
+            <p class="mb-0">${adressDaten[0]} ${adressDaten[1]}</p>
+            <p class="mb-0">${adressDaten[2]}</p>
             <p>${adressDaten[3]} ${adressDaten[4]}</p>
             <p><strong>Spendenziel:</strong> ${spendenziel}</p>
             <p><strong>Art der Kleider:</strong> ${kleiderString}</p>

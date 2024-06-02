@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css" type="text/css" />
     <link rel="stylesheet" href="assets/fontawesome/css/solid.css" type="text/css" />
 
-    <title>Kleiderspenden-Registrierung</title>
+    <title>Kleiderspenden Registrierung</title>
 </head>
 
 <body>
@@ -143,7 +143,7 @@
 
         <section class="container my-5">
 
-            <form id="registrierungKleiderspende" novalidate>
+            <form id="registrierungKleiderspende" action="/abschluss.html" method="GET" novalidate>
 
                 <fieldset>
                     <legend>Abgabe der Kleiderspende:</legend>
@@ -202,12 +202,13 @@
                             <div class="col-12 mb-3">
                                 <label for="strasseUndNummer">Straßenname und Hausnummer: *</label>
                                 <input type="text" class="form-control" id="strasseUndNummer" name="strasseUndNummer">
-                                <div class="form-hint" id="hint-adresse">z.B. Musterstraße 19</div>
+                                <div class="form-text" id="hint-adresse">z.B. Musterstraße 19</div>
                                 <span class="error" aria-live="polite"></span>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="plz">Postleitzahl: *</label>
                                 <input type="number" class="form-control" id="plz" name="plz">
+                                <dv class="form-text">Abholung beschränkt auf PLZ-Gebiet 50xxx.</dv>
                                 <span class="error" aria-live="polite"></span>
                             </div>
                             <div class="col-md-8 mb-3">
@@ -223,7 +224,7 @@
 
                     <div class="form-group" id="artKleidung">
                         <fieldset>
-                            <legend>Art der Kleidung</legend>
+                            <legend>Art der Kleidung *</legend>
                             <div class="rounded" id="artKleidungOptionen">
                                 <div class="form-check form-check-inline">
                                     <input type="checkbox" id="tshirts" name="tshirts" value="T-Shirts">
@@ -297,7 +298,7 @@
                     <fieldset>
                         <legend>Spendenziel</legend>
                         <div class="form-group col-lg-4" id="spendenzielDiv">
-                            <label for="spendenziel">In welche Region soll die Spende gehen?</label>
+                            <label for="spendenziel">In welche Region soll die Spende gehen? *</label>
                             <select id="spendenziel" class="form-control" required>
                                 <option value="" disabled selected>Bitte auswählen</option>
                                 <option>Ghana</option>
