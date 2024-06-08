@@ -140,7 +140,7 @@ legend {
 /*Validierung*/
 
 .invalid {
-    background-color: var(--bs-danger-bg-subtle);
+    background-color: var(--bs-danger-bg-subtle)!important;
     border-color: var(--bs-form-invalid-border-color);
 }
 
